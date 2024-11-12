@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>ThemModdingHerds.$(MSBuildProjectName)</AssemblyName>
+    <Version>1.0.0</Version>
+    <Authors>NightTheFox</Authors>
+    <Description>Them's Fightin' Herds .foit reader/writer library</Description>
+    <PackageProjectUrl>https://github.com/ThemModdingHerds</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ThemModdingHerds/foits</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageOutputPath>bin\Package</PackageOutputPath>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <IncludeSymbols>True</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageTags>tfhres;tfh;themsfightinherds;reader;writer;foit;foits</PackageTags>
+    <RootNamespace>ThemModdingHerds.Foits</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+    </None>
+    <None Update="LICENSE">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+    </None>
+    <None Include="icon.png" Pack="true" Visible="false" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="ThemModdingHerds.IO" Version="1.2.1" />
+  </ItemGroup>
+</Project>
