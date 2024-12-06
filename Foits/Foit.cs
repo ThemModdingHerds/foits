@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using ThemModdingHerds.IO.Binary;
 
 namespace ThemModdingHerds.Foits;
-public class Foit(FoitHeader header,IEnumerable<Palette> palettes,IEnumerable<ColorGroup> colorGroups) : ISerializable
+public class Foit(FoitHeader header,IEnumerable<Palette> palettes,IEnumerable<ColorGroup> colorGroups)
 {
     public FoitHeader Header {get;set;} = header;
     public List<Palette> Palettes {get;set;} = [..palettes];
@@ -11,10 +11,6 @@ public class Foit(FoitHeader header,IEnumerable<Palette> palettes,IEnumerable<Co
     public Foit(FoitHeader header): this(header,[],[])
     {
         
-    }
-    public void GetObjectData(SerializationInfo info, StreamingContext context)
-    {
-        throw new NotImplementedException();
     }
 }
 public static class FoitExt

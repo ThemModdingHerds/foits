@@ -1,5 +1,3 @@
-#include <std/io>
-
 struct ByteString
 {
     u8 length;
@@ -14,11 +12,11 @@ struct ShortString
 
 struct BGRA
 {
-    u8 blue  [[color("0000FF")]];
-    u8 green [[color("00FF00")]];
-    u8 red [[color("FF0000")]];
+    u8 blue;
+    u8 green;
+    u8 red;
     u8 alpha;
-} [[static, color(std::format("{:02X}{:02X}{:02X}", red, green, blue))]];
+};
 
 struct Palette
 {
@@ -46,21 +44,22 @@ struct ColorGroups
 struct Header
 {
     u32 id;
-    u8 byte1;
-    bool hasPals;
-    u16 short1;
-    u8 byte2_length;
-    if(hasPals)
+    u32 int1;
+    u8 byte1_length;
+    if(int1 != 9)
     {
-        u8 byte3;
-        u8 byte2_arr[byte2_length];
-        u8 byte4_arr[12];
+        u8 byte2;
+        u8 byte1_arr[byte1_length];
+        u8 byte3_arr[12];
         u16 palFilesCount;
         ByteString palFiles[palFilesCount];
     }
     ByteString name;
     ShortString spt;
-    u8 byte7_arr[11];
+    u16 short1;
+    u32 int2;
+    u32 int3;
+    u8 byte4;
     u16 palCount;
 };
 
